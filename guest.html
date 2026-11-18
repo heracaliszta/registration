@@ -1,0 +1,2183 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Graduation Ceremony SMA Bumi Berbakti 2027 | Digital Invitation</title>
+    
+    <!-- Google Fonts: Cormorant Garamond & Playfair Display (Luxury Serif) & Plus Jakarta Sans (Modern Clean Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- QRCode.js for Real Scannable QR Codes -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <!-- Tailwind Custom Theme Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            950: '#060E1A',
+                            900: '#0A1628',
+                            800: '#0F203A',
+                            700: '#162C4E',
+                        },
+                        gold: {
+                            300: '#F3E0A8',
+                            400: '#E5C76B',
+                            500: '#D4AF37',
+                            600: '#B59224',
+                            700: '#8A6D14',
+                        },
+                        ivory: '#FAF7F0',
+                        charcoal: '#1E242B',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', '"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'gold-glow': '0 0 25px rgba(212, 175, 55, 0.18)',
+                        'gold-btn': '0 8px 20px -4px rgba(212, 175, 55, 0.35)',
+                        'luxury': '0 20px 45px -15px rgba(0, 0, 0, 0.7)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Luxury Styles & Micro-animations */
+        :root {
+            --navy-deep: #0A1628;
+            --navy-card: #0F203A;
+            --gold-primary: #D4AF37;
+            --gold-light: #E5C76B;
+            --ivory: #FAF7F0;
+        }
+
+        body {
+            background-color: #050B14;
+            color: #FAF7F0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+            overflow-x: hidden;
+        }
+
+        /* Subtle Ambient Radial Gold Glow */
+        .ambient-bg {
+            background-color: #0A1628;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.16) 0%, transparent 55%),
+                radial-gradient(circle at 85% 35%, rgba(212, 175, 55, 0.07) 0%, transparent 45%),
+                radial-gradient(circle at 15% 75%, rgba(22, 44, 78, 0.6) 0%, transparent 50%);
+        }
+
+        /* Luxury Glass Card */
+        .luxury-card {
+            background: linear-gradient(145deg, rgba(15, 32, 58, 0.92), rgba(10, 22, 40, 0.96));
+            border: 1px solid rgba(212, 175, 55, 0.28);
+            backdrop-filter: blur(12px);
+        }
+
+        .luxury-card-hover {
+            transition: all 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .luxury-card-hover:active {
+            transform: scale(0.985);
+            border-color: rgba(229, 199, 107, 0.7);
+        }
+
+        /* Gold Shimmer Text */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F3E0A8 0%, #D4AF37 50%, #B59224 100%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Gold Primary Button */
+        .btn-gold {
+            background: linear-gradient(135deg, #E5C76B 0%, #D4AF37 55%, #B59224 100%);
+            color: #0A1628;
+            transition: all 0.25s ease;
+        }
+        .btn-gold:active {
+            transform: scale(0.97);
+            filter: brightness(1.06);
+        }
+
+        /* Elegant Hairline Divider */
+        .gold-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.55), transparent);
+        }
+
+        /* Form Input Styling */
+        .luxury-input {
+            background-color: rgba(6, 14, 26, 0.75);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: #FAF7F0;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .luxury-input:focus {
+            outline: none;
+            border-color: #D4AF37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.14);
+        }
+        .luxury-input::placeholder {
+            color: rgba(250, 247, 240, 0.35);
+        }
+
+        /* Custom Scrollbar for App Container */
+        ::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A1628;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(212, 175, 55, 0.35);
+            border-radius: 9999px;
+        }
+
+        /* Fade & Slide View Transition */
+        .view-section {
+            animation: fadeSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* QR Code Container Styling */
+        #qrcode-container img, #qrcode-container canvas {
+            margin: 0 auto !important;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex justify-center items-start bg-[#040911] selection:bg-gold-500 selection:text-navy-900">
+
+    <!-- MOBILE-FIRST APP CONTAINER (Target 390x844px on mobile, framed elegantly on larger viewports) -->
+    <div id="app-shell" class="w-full max-w-[430px] min-h-screen ambient-bg relative flex flex-col shadow-luxury sm:my-4 sm:min-h-[844px] sm:rounded-[34px] sm:border sm:border-gold-500/30 overflow-hidden">
+        
+        <!-- Subtle Corner Gold Filigree Ornaments -->
+        <div class="pointer-events-none absolute top-0 left-0 w-24 h-24 opacity-25">
+            <svg viewBox="0 0 100 100" fill="none">
+                <path d="M0 0 H100 V2 H2 V100 H0 Z" fill="#D4AF37"/>
+                <path d="M10 10 H65 V11 H11 V65 H10 Z" fill="#D4AF37"/>
+                <circle cx="11" cy="11" r="2.5" fill="#E5C76B"/>
+            </svg>
+        </div>
+        <div class="pointer-events-none absolute top-0 right-0 w-24 h-24 opacity-25 scale-x-[-1]">
+            <svg viewBox="0 0 100 100" fill="none">
+                <path d="M0 0 H100 V2 H2 V100 H0 Z" fill="#D4AF37"/>
+                <path d="M10 10 H65 V11 H11 V65 H10 Z" fill="#D4AF37"/>
+                <circle cx="11" cy="11" r="2.5" fill="#E5C76B"/>
+            </svg>
+        </div>
+
+        <!-- TOP MINIMAL INVITATION BAR -->
+        <header class="sticky top-0 z-30 bg-navy-900/85 backdrop-blur-md border-b border-gold-500/20 px-5 py-3.5 flex items-center justify-between">
+            <button onclick="navigateTo('home')" class="flex items-center gap-2.5 text-left focus:outline-none">
+                <div class="w-8 h-8 rounded-full border border-gold-500/60 bg-navy-800 flex items-center justify-center shadow-gold-glow">
+                    <span class="font-serif font-bold text-sm text-gold-400 tracking-wider">GB</span>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-[0.22em] text-gold-400/90 font-semibold leading-none">Official E-Invitation</p>
+                    <p class="font-serif text-sm font-semibold text-ivory tracking-wide mt-0.5">SMA Bumi Berbakti</p>
+                </div>
+            </button>
+            <div class="flex items-center gap-2">
+                <span id="cloud-sync-badge" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-[10px] font-medium text-gold-300 tracking-wider">
+                    <span id="cloud-sync-dot" class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                    <span id="cloud-sync-text">CONNECTING...</span>
+                </span>
+            </div>
+        </header>
+
+        <!-- MAIN SCROLLABLE CONTENT AREA -->
+        <main id="main-content" class="flex-1 px-5 pt-5 pb-28 overflow-y-auto">
+
+            <!-- ========================================== -->
+            <!-- VIEW 1: LANDING PAGE (UNDANGAN DIGITAL)    -->
+            <!-- ========================================== -->
+            <section id="view-home" class="view-section space-y-6">
+                
+                <!-- Hero Invitation Crest & Header -->
+                <div class="luxury-card rounded-3xl p-6 text-center relative overflow-hidden shadow-gold-glow">
+                    <!-- Subtle Inner Double Frame -->
+                    <div class="absolute inset-2.5 rounded-2xl border border-gold-500/20 pointer-events-none"></div>
+                    
+                    <!-- Monogram Crest -->
+                    <div class="mx-auto w-20 h-20 rounded-full border border-gold-500/50 bg-navy-950/80 flex flex-col items-center justify-center mb-4 shadow-gold-glow relative">
+                        <div class="absolute inset-1 rounded-full border border-dashed border-gold-400/30"></div>
+                        <span class="text-[9px] tracking-[0.25em] text-gold-400 uppercase font-semibold">EST.</span>
+                        <span class="font-serif text-2xl font-bold gold-gradient-text leading-none my-0.5">GBB</span>
+                        <span class="text-[10px] tracking-[0.2em] text-ivory/80 font-medium">2027</span>
+                    </div>
+
+                    <p class="text-[11px] uppercase tracking-[0.28em] text-gold-400 font-semibold mb-2">
+                        You Are Cordially Invited To
+                    </p>
+                    
+                    <h1 class="font-serif text-[32px] leading-[1.12] font-bold tracking-wide text-ivory uppercase">
+                        Graduation<br>
+                        <span class="gold-gradient-text">Ceremony</span>
+                    </h1>
+                    
+                    <p class="font-serif text-lg tracking-[0.14em] text-ivory/95 font-semibold mt-1.5 uppercase">
+                        SMA Bumi Berbakti 2027
+                    </p>
+
+                    <div class="gold-divider my-4"></div>
+
+                    <!-- Theme Quote -->
+                    <div class="px-2">
+                        <p class="text-[10px] uppercase tracking-[0.2em] text-gold-400/80 mb-1">Grand Theme</p>
+                        <p class="font-serif italic text-xl text-gold-300 leading-snug">
+                            “The Journey Begins: Milestone of Success”
+                        </p>
+                    </div>
+
+                    <div class="gold-divider my-4"></div>
+
+                    <!-- Date, Time & Venue Details -->
+                    <div class="space-y-3 text-center">
+                        <div>
+                            <p class="text-xs font-bold tracking-[0.24em] text-ivory uppercase">Sabtu, 15 May 2027</p>
+                            <p class="text-xs text-gold-300/90 tracking-[0.16em] mt-0.5 font-medium">08.00 — 14.00 WIB</p>
+                        </div>
+                        
+                        <div class="pt-1">
+                            <p class="font-serif text-base font-semibold text-ivory">Tunjungan Grand Ballroom</p>
+                            <p class="text-xs text-ivory/70 tracking-wide">DoubleTree by Hilton Surabaya</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Countdown Timer -->
+                <div class="luxury-card rounded-2xl p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold">Menuju Hari Prosesi</span>
+                        <span class="text-[10px] text-ivory/60">15 Mei 2027 • 08:00 WIB</span>
+                    </div>
+                    <div class="grid grid-cols-4 gap-2 text-center">
+                        <div class="bg-navy-950/90 border border-gold-500/25 rounded-xl py-2.5 px-1">
+                            <span id="cd-days" class="font-serif text-2xl font-bold gold-gradient-text block leading-none">000</span>
+                            <span class="text-[10px] uppercase tracking-wider text-ivory/60 mt-1 block">Hari</span>
+                        </div>
+                        <div class="bg-navy-950/90 border border-gold-500/25 rounded-xl py-2.5 px-1">
+                            <span id="cd-hours" class="font-serif text-2xl font-bold gold-gradient-text block leading-none">00</span>
+                            <span class="text-[10px] uppercase tracking-wider text-ivory/60 mt-1 block">Jam</span>
+                        </div>
+                        <div class="bg-navy-950/90 border border-gold-500/25 rounded-xl py-2.5 px-1">
+                            <span id="cd-mins" class="font-serif text-2xl font-bold gold-gradient-text block leading-none">00</span>
+                            <span class="text-[10px] uppercase tracking-wider text-ivory/60 mt-1 block">Menit</span>
+                        </div>
+                        <div class="bg-navy-950/90 border border-gold-500/25 rounded-xl py-2.5 px-1">
+                            <span id="cd-secs" class="font-serif text-2xl font-bold gold-gradient-text block leading-none">00</span>
+                            <span class="text-[10px] uppercase tracking-wider text-ivory/60 mt-1 block">Detik</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Primary & Secondary Call-To-Action Buttons -->
+                <div class="space-y-3 pt-1">
+                    <button onclick="navigateTo('register')" class="w-full btn-gold py-4 px-6 rounded-2xl font-bold text-sm tracking-[0.14em] uppercase shadow-gold-btn flex items-center justify-center gap-2.5">
+                        <span>Registrasi Undangan</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+                        </svg>
+                    </button>
+
+                    <button onclick="navigateTo('retrieve')" class="w-full bg-navy-800/90 hover:bg-navy-700/90 border border-gold-500/45 text-gold-300 py-3.5 px-6 rounded-2xl font-semibold text-xs tracking-[0.14em] uppercase transition flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 14.625a1.125 1.125 0 011.125-1.125h1.5a1.125 1.125 0 011.125 1.125v1.5a1.125 1.125 0 01-1.125 1.125h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5zM18.375 18.375h1.5v1.5h-1.5v-1.5z"/>
+                        </svg>
+                        <span>Sudah Registrasi? Lihat QR</span>
+                    </button>
+                </div>
+
+                <!-- Concise Protocol Notice -->
+                <div class="rounded-2xl bg-navy-950/65 border border-gold-500/20 p-4 flex items-start gap-3">
+                    <div class="w-8 h-8 rounded-xl bg-gold-500/15 border border-gold-500/30 flex items-center justify-center shrink-0 mt-0.5">
+                        <svg class="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xs font-semibold text-gold-300 tracking-wide">Akses Masuk Ballroom (QR Pass)</h3>
+                        <p class="text-[11px] text-ivory/70 leading-relaxed mt-1">
+                            Setiap tamu undangan wajib melakukan konfirmasi kehadiran H-5 dan menunjukkan <span class="text-ivory font-medium">QR Code unik</span> kepada panitia pada pintu masuk Tunjungan Grand Ballroom.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- VIEW 2: PILIHAN KATEGORI & FORM REGISTRASI -->
+            <!-- ========================================== -->
+            <section id="view-register" class="view-section hidden space-y-5">
+                
+                <!-- Step 1: Role Selection ("ANDA HADIR SEBAGAI?") -->
+                <div id="role-selection-step" class="space-y-4">
+                    <div class="text-center space-y-1.5">
+                        <p class="text-[10px] uppercase tracking-[0.24em] text-gold-400 font-semibold">Konfirmasi Kehadiran</p>
+                        <h2 class="font-serif text-2xl font-bold text-ivory tracking-wide">ANDA HADIR SEBAGAI?</h2>
+                        <p class="text-xs text-ivory/70">Silakan pilih kategori tamu undangan Anda</p>
+                    </div>
+
+                    <div class="gold-divider"></div>
+
+                    <!-- Card 1: WISUDAWAN -->
+                    <button onclick="selectRole('student')" class="w-full text-left luxury-card luxury-card-hover rounded-2xl p-4.5 p-5 relative overflow-hidden group">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3.5">
+                                <div class="w-12 h-12 rounded-2xl bg-gold-500/15 border border-gold-500/40 flex items-center justify-center text-2xl shrink-0">
+                                    🎓
+                                </div>
+                                <div>
+                                    <h3 class="font-serif text-xl font-bold text-ivory group-hover:text-gold-300 transition">WISUDAWAN</h3>
+                                    <p class="text-xs text-ivory/70 mt-0.5">Siswa/i Kelas XII IPA & XII IPS</p>
+                                    <div class="mt-2 inline-flex items-center gap-2 text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-navy-950 border border-gold-500/25 text-gold-300">
+                                        <span id="quota-student-badge">Terdaftar: 6 / 219</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <svg class="w-5 h-5 text-gold-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+                            </svg>
+                        </div>
+                    </button>
+
+                    <!-- Card 2: WALI MURID -->
+                    <button onclick="selectRole('guardian')" class="w-full text-left luxury-card luxury-card-hover rounded-2xl p-5 relative overflow-hidden group">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3.5">
+                                <div class="w-12 h-12 rounded-2xl bg-gold-500/15 border border-gold-500/40 flex items-center justify-center text-2xl shrink-0">
+                                    👨‍👩‍👧
+                                </div>
+                                <div>
+                                    <h3 class="font-serif text-xl font-bold text-ivory group-hover:text-gold-300 transition">WALI MURID</h3>
+                                    <p class="text-xs text-ivory/70 mt-0.5">Orang Tua / Wali Pendamping Wisudawan</p>
+                                    <div class="mt-2 inline-flex items-center gap-2 text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-navy-950 border border-gold-500/25 text-gold-300">
+                                        <span id="quota-guardian-badge">Terhubung 1-on-1 dengan Wisudawan</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <svg class="w-5 h-5 text-gold-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+                            </svg>
+                        </div>
+                    </button>
+
+                    <!-- Card 3: GURU / PENGURUS SEKOLAH -->
+                    <button onclick="selectRole('teacher')" class="w-full text-left luxury-card luxury-card-hover rounded-2xl p-5 relative overflow-hidden group">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3.5">
+                                <div class="w-12 h-12 rounded-2xl bg-gold-500/15 border border-gold-500/40 flex items-center justify-center text-2xl shrink-0">
+                                    👨‍🏫
+                                </div>
+                                <div>
+                                    <h3 class="font-serif text-xl font-bold text-ivory group-hover:text-gold-300 transition">GURU / PENGURUS SEKOLAH</h3>
+                                    <p class="text-xs text-ivory/70 mt-0.5">Guru, Wali Kelas (7 Kelas) & Pimpinan</p>
+                                    <div class="mt-2 inline-flex items-center gap-2 text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-navy-950 border border-gold-500/25 text-gold-300">
+                                        <span>Zona VIP & Civitas Akademika</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <svg class="w-5 h-5 text-gold-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Step 2A: FORM WISUDAWAN -->
+                <form id="form-student" onsubmit="handleStudentSubmit(event)" class="hidden space-y-4">
+                    <div class="flex items-center justify-between">
+                        <button type="button" onclick="resetRoleSelection()" class="inline-flex items-center gap-1.5 text-xs text-gold-400 hover:text-gold-300 font-medium py-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/>
+                            </svg>
+                            Ganti Kategori
+                        </button>
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold">🎓 Form Wisudawan</span>
+                    </div>
+
+                    <div class="luxury-card rounded-3xl p-5 space-y-4">
+                        <div>
+                            <h2 class="font-serif text-2xl font-bold text-ivory">Registrasi Wisudawan</h2>
+                            <p class="text-xs text-ivory/65 mt-0.5">Kapasitas: 120 IPA + 99 IPS = 219 Wisudawan</p>
+                        </div>
+                        <div class="gold-divider"></div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-gold-300 mb-1.5">Nama Lengkap Wisudawan *</label>
+                            <input type="text" id="stu-nama" required placeholder="Contoh: Ahmad Fajar Pratama" class="w-full luxury-input rounded-xl px-4 py-3.5 text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-gold-300 mb-1.5">NIS / NISN *</label>
+                            <input type="text" id="stu-nisn" required inputmode="numeric" placeholder="Masukkan 10 digit NISN" class="w-full luxury-input rounded-xl px-4 py-3.5 text-sm">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-medium text-gold-300 mb-1.5">Jurusan *</label>
+                                <select id="stu-jurusan" required onchange="updateClassOptions()" class="w-full luxury-input rounded-xl px-3.5 py-3.5 text-sm">
+                                    <option value="">Pilih Jurusan</option>
+                                    <option value="XII IPA">XII IPA (Max 120)</option>
+                                    <option value="XII IPS">XII IPS (Max 99)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-gold-300 mb-1.5">Kelas *</label>
+                                <select id="stu-kelas" required class="w-full luxury-input rounded-xl px-3.5 py-3.5 text-sm">
+                                    <option value="">Pilih Jurusan Dulu</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-gold-300 mb-1.5">Nomor Peserta Ujian / Wisuda *</label>
+                            <input type="text" id="stu-nomor" required placeholder="Contoh: 27-01-045" class="w-full luxury-input rounded-xl px-4 py-3.5 text-sm uppercase">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-gold-300 mb-1.5">Nomor WhatsApp Aktif *</label>
+                            <input type="tel" id="stu-wa" required inputmode="tel" placeholder="Contoh: 081234567890" class="w-full luxury-input rounded-xl px-4 py-3.5 text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-gold-300 mb-1.5">Alamat Email *</label>
+                            <input type="email" id="stu-email" required placeholder="nama@email.com" class="w-full luxury-input rounded-xl px-4 py-3.5 text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-gold-300 mb-1.5">Konfirmasi Kehadiran *</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="stu-hadir" value="Hadir" checked class="peer sr-only">
+                                    <div class="rounded-xl border border-gold-500/30 bg-navy-950/70 py-3 px-3 text-center text-xs font-semibold text-ivory/75 peer-checked:border-gold-400 peer-checked:bg-gold-500/20 peer-checked:text-gold-300 transition">
+                                        ✓ Hadir Prosesi
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="stu-hadir" value="Tidak Hadir" class="peer sr-only">
+                                    <div class="rounded-xl border border-gold-500/30 bg-navy-950/70 py-3 px-3 text-center text-xs font-semibold text-ivory/75 peer-checked:border-rose-400 peer-checked:bg-rose-500/20 peer-checked:text-rose-200 transition">
+                                        ✕ Berhalangan
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full btn-gold py-4 rounded-2xl font-bold text-sm tracking-[0.12em] uppercase shadow-gold-btn mt-2">
+                            Terbitkan QR Code Wisudawan
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Step 2B: FORM WALI MURID -->
+                <form id="form-guardian" onsubmit="handleGuardianSubmit(event)" class="hidden space-y-4">
+                    <div class="flex items-center justify-between">
+                        <button type="button" onclick="resetRoleSelection()" class="inline-flex items-center gap-1.5 text-xs text-gold-400 hover:text-gold-300 font-medium py-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/>
+                            </svg>
+                            Ganti Kategori
+                        </button>
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold">👨‍👩‍👧 Form Wali Murid</span>
+                    </div>
+
+                    <div class="luxury-card rounded-3xl p-5 space-y-4">
+                        <div>
+                            <h2 class="font-serif text-2xl font-bold text-ivory">Registrasi Wali Murid</h2>
+                            <p class="text-xs text-ivory/65 mt-0.5">Setiap wali murid terhubung dengan 1 data wisudawan resmi</p>
+                        </div>
+                        <div class="gold-divider"></div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-gold-300 mb-1.5">Nama Lengkap Wali Murid *</label>
+                            <input type="text" id="wal-nama" required placeholder="Contoh: Drs. Hendra Wijaya" class="w-full luxury-input rounded-xl px-4 py-3.5 text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-gold-300 mb-1.5">Hubungan dengan Wisudawan *</label>
+                            <select id="wal-hubungan" required class="w-full luxury-input rounded-xl px-4 py-3.5 text-sm">
+                                <option value="">Pilih Hubungan</option>
+                                <option value="Ayah Kandung">Ayah Kandung</option>
+                                <option value="Ibu Kandung">Ibu Kandung</option>
+                                <option value="Wali Keluarga">Wali Keluarga</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-gold-300 mb-1.5">Nomor WhatsApp Wali *</label>
+                            <input type="tel" id="wal-wa" required inputmode="tel" placeholder="Contoh: 081398765432" class="w-full luxury-input rounded-xl px-4 py-3.5 text-sm">
+                        </div>
+
+                        <!-- Student Verification Lookup (Protects full student DB privacy while preventing fake names) -->
+                        <div class="p-3.5 rounded-2xl bg-navy-950/80 border border-gold-500/30 space-y-3">
+                            <div class="flex items-center justify-between">
+                                <label class="block text-xs font-semibold text-gold-300">Verifikasi Data Putra/Putri *</label>
+                                <span class="text-[10px] text-ivory/50">Cloud Database</span>
+                            </div>
+                            
+                            <div class="flex gap-2">
+                                <input type="text" id="wal-student-search" placeholder="Ketik Nama Lengkap / NISN / No. Peserta..." class="flex-1 luxury-input rounded-xl px-3.5 py-3 text-xs">
+                                <button type="button" onclick="lookupStudentForGuardian()" class="px-4 py-3 rounded-xl bg-gold-500/20 border border-gold-500/50 text-gold-300 text-xs font-semibold hover:bg-gold-500/30 transition shrink-0">
+                                    Cari
+                                </button>
+                            </div>
+                            <p class="text-[10px] text-ivory/50">Masukkan NISN (10 digit), Nomor Peserta, atau Nama Lengkap persis wisudawan yang telah terdaftar.</p>
+
+                            <!-- Verified Student Result Box -->
+                            <input type="hidden" id="wal-selected-student-id" required>
+                            <div id="verified-student-card" class="hidden rounded-xl bg-navy-800/90 border border-emerald-500/40 p-3 space-y-1.5">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400">✓ Wisudawan Terverifikasi</span>
+                                    <button type="button" onclick="clearSelectedStudent()" class="text-[10px] text-ivory/50 hover:text-ivory">Ganti</button>
+                                </div>
+                                <p id="ver-stu-nama" class="font-serif text-lg font-bold text-ivory leading-tight">-</p>
+                                <div class="grid grid-cols-2 gap-2 pt-1 text-xs">
+                                    <div>
+                                        <span class="text-ivory/50 block text-[10px]">Kelas</span>
+                                        <span id="ver-stu-kelas" class="text-gold-300 font-semibold">-</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-ivory/50 block text-[10px]">Nomor Peserta</span>
+                                        <span id="ver-stu-nomor" class="text-ivory font-semibold">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-gold-300 mb-1.5">Konfirmasi Kehadiran *</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="wal-hadir" value="Hadir" checked class="peer sr-only">
+                                    <div class="rounded-xl border border-gold-500/30 bg-navy-950/70 py-3 px-3 text-center text-xs font-semibold text-ivory/75 peer-checked:border-gold-400 peer-checked:bg-gold-500/20 peer-checked:text-gold-300 transition">
+                                        ✓ Hadir Mendampingi
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="wal-hadir" value="Tidak Hadir" class="peer sr-only">
+                                    <div class="rounded-xl border border-gold-500/30 bg-navy-950/70 py-3 px-3 text-center text-xs font-semibold text-ivory/75 peer-checked:border-rose-400 peer-checked:bg-rose-500/20 peer-checked:text-rose-200 transition">
+                                        ✕ Tidak Hadir
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full btn-gold py-4 rounded-2xl font-bold text-sm tracking-[0.12em] uppercase shadow-gold-btn mt-2">
+                            Terbitkan QR Code Wali Murid
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Step 2C: FORM GURU / PENGURUS SEKOLAH -->
+                <form id="form-teacher" onsubmit="handleTeacherSubmit(event)" class="hidden space-y-4">
+                    <div class="flex items-center justify-between">
+                        <button type="button" onclick="resetRoleSelection()" class="inline-flex items-center gap-1.5 text-xs text-gold-400 hover:text-gold-300 font-medium py-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/>
+                            </svg>
+                            Ganti Kategori
+                        </button>
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold">👨‍🏫 Form Guru & Pengurus</span>
+                    </div>
+
+                    <div class="luxury-card rounded-3xl p-5 space-y-4">
+                        <div>
+                            <h2 class="font-serif text-2xl font-bold text-ivory">Registrasi Guru / Pengurus</h2>
+                            <p class="text-xs text-ivory/65 mt-0.5">Civitas Akademika & Pimpinan SMA Bumi Berbakti</p>
+                        </div>
+                        <div class="gold-divider"></div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-gold-300 mb-1.5">Nama Lengkap & Gelar *</label>
+                            <input type="text" id="tch-nama" required placeholder="Contoh: Dra. Sri Wahyuni, M.Pd." class="w-full luxury-input rounded-xl px-4 py-3.5 text-sm">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-medium text-gold-300 mb-1.5">Kategori Jabatan *</label>
+                                <select id="tch-jabatan" required class="w-full luxury-input rounded-xl px-3.5 py-3.5 text-sm">
+                                    <option value="">Pilih Jabatan</option>
+                                    <option value="Guru">Guru</option>
+                                    <option value="Wali Kelas">Wali Kelas</option>
+                                    <option value="Pengurus Sekolah">Pengurus Sekolah</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-gold-300 mb-1.5">Unit / Kelas (7 Pilihan) *</label>
+                                <select id="tch-kelas" required class="w-full luxury-input rounded-xl px-3.5 py-3.5 text-sm">
+                                    <option value="">Pilih Kelas</option>
+                                    <option value="XII IPA 1">XII IPA 1</option>
+                                    <option value="XII IPA 2">XII IPA 2</option>
+                                    <option value="XII IPA 3">XII IPA 3</option>
+                                    <option value="XII IPS 1">XII IPS 1</option>
+                                    <option value="XII IPS 2">XII IPS 2</option>
+                                    <option value="XII IPS 3">XII IPS 3</option>
+                                    <option value="Umum / Semua Kelas">Umum / Semua Kelas</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-gold-300 mb-1.5">Nomor WhatsApp *</label>
+                            <input type="tel" id="tch-wa" required inputmode="tel" placeholder="Contoh: 081211223344" class="w-full luxury-input rounded-xl px-4 py-3.5 text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-gold-300 mb-1.5">Email Institusi / Pribadi *</label>
+                            <input type="email" id="tch-email" required placeholder="guru@smabumiberbakti.sch.id" class="w-full luxury-input rounded-xl px-4 py-3.5 text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-gold-300 mb-1.5">Konfirmasi Kehadiran *</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="tch-hadir" value="Hadir" checked class="peer sr-only">
+                                    <div class="rounded-xl border border-gold-500/30 bg-navy-950/70 py-3 px-3 text-center text-xs font-semibold text-ivory/75 peer-checked:border-gold-400 peer-checked:bg-gold-500/20 peer-checked:text-gold-300 transition">
+                                        ✓ Hadir Acara
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="tch-hadir" value="Tidak Hadir" class="peer sr-only">
+                                    <div class="rounded-xl border border-gold-500/30 bg-navy-950/70 py-3 px-3 text-center text-xs font-semibold text-ivory/75 peer-checked:border-rose-400 peer-checked:bg-rose-500/20 peer-checked:text-rose-200 transition">
+                                        ✕ Berhalangan
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full btn-gold py-4 rounded-2xl font-bold text-sm tracking-[0.12em] uppercase shadow-gold-btn mt-2">
+                            Terbitkan QR Code VIP / Guru
+                        </button>
+                    </div>
+                </form>
+
+            </section>
+
+            <!-- ========================================== -->
+            <!-- VIEW 3: HALAMAN BERHASIL & PASS QR CODE    -->
+            <!-- ========================================== -->
+            <section id="view-pass" class="view-section hidden space-y-5">
+                
+                <!-- Success Banner -->
+                <div class="text-center space-y-1">
+                    <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/40 text-emerald-300 text-xs font-bold tracking-wider uppercase">
+                        <span>REGISTRASI BERHASIL ✓</span>
+                    </div>
+                    <h2 class="font-serif text-2xl font-bold text-ivory pt-1">Official Ballroom Pass</h2>
+                    <p class="text-xs text-ivory/65">Simpan tiket digital ini untuk pemindaian di pintu masuk</p>
+                </div>
+
+                <!-- Luxury VIP Boarding / Invitation Pass Card -->
+                <div id="printable-pass-card" class="luxury-card rounded-3xl overflow-hidden shadow-gold-glow border border-gold-500/50">
+                    <!-- Top Header Band -->
+                    <div class="bg-gradient-to-r from-navy-950 via-navy-800 to-navy-950 px-5 py-4 border-b border-gold-500/30 flex items-center justify-between">
+                        <div>
+                            <p class="text-[9px] uppercase tracking-[0.24em] text-gold-400 font-semibold">SMA Bumi Berbakti 2027</p>
+                            <p class="font-serif text-base font-bold text-ivory">Graduation Ceremony</p>
+                        </div>
+                        <span id="pass-status-badge" class="px-2.5 py-1 rounded-lg bg-gold-500/20 border border-gold-500/40 text-[10px] font-bold text-gold-300 uppercase tracking-wider">
+                            HADIR
+                        </span>
+                    </div>
+
+                    <!-- Guest Identity Details -->
+                    <div class="p-5 space-y-4">
+                        <div>
+                            <p class="text-[10px] uppercase tracking-[0.18em] text-ivory/50">Nama Tamu Undangan</p>
+                            <h3 id="pass-nama" class="font-serif text-2xl font-bold text-ivory mt-0.5 leading-snug">-</h3>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3 pt-1">
+                            <div class="bg-navy-950/70 rounded-xl p-3 border border-gold-500/20">
+                                <p class="text-[10px] uppercase tracking-wider text-ivory/50">Kategori</p>
+                                <p id="pass-kategori" class="text-xs font-bold text-gold-300 mt-0.5">-</p>
+                            </div>
+                            <div class="bg-navy-950/70 rounded-xl p-3 border border-gold-500/20">
+                                <p id="pass-sublabel" class="text-[10px] uppercase tracking-wider text-ivory/50">Kelas / Info</p>
+                                <p id="pass-kelas" class="text-xs font-bold text-ivory mt-0.5">-</p>
+                            </div>
+                        </div>
+
+                        <!-- Perforated Ticket Divider -->
+                        <div class="relative py-2 flex items-center">
+                            <div class="w-5 h-5 rounded-full bg-navy-950 border-r border-gold-500/40 -ml-7"></div>
+                            <div class="flex-1 border-t border-dashed border-gold-500/40 mx-2"></div>
+                            <div class="w-5 h-5 rounded-full bg-navy-950 border-l border-gold-500/40 -mr-7"></div>
+                        </div>
+
+                        <!-- High-Contrast White QR Container for Reliable Mobile Camera Scanning -->
+                        <div class="bg-white rounded-2xl p-5 text-center shadow-inner">
+                            <div id="qrcode-container" class="flex justify-center items-center min-h-[190px]"></div>
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-charcoal/60 font-semibold mt-3">Registration ID</p>
+                            <p id="pass-reg-id" class="font-mono text-base font-bold text-navy-900 tracking-wider mt-0.5">-</p>
+                        </div>
+
+                        <p class="text-center text-xs text-gold-300/95 font-medium leading-relaxed px-2">
+                            “Tunjukkan QR Code ini kepada panitia saat memasuki ballroom.”
+                        </p>
+
+                        <!-- Personalized Seating Card -->
+                        <div class="rounded-2xl bg-navy-950/90 border border-gold-500/40 p-4">
+                            <div class="flex items-center justify-between mb-2.5">
+                                <span class="text-[10px] uppercase tracking-[0.2em] text-gold-400 font-bold">Tempat Duduk Anda</span>
+                                <button onclick="openFloorplanModal()" class="text-[11px] font-semibold text-gold-300 underline hover:text-gold-400">
+                                    LIHAT DENAH →
+                                </button>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2 text-center">
+                                <div class="bg-navy-800/80 rounded-xl py-2.5 px-1 border border-gold-500/20">
+                                    <span class="text-[10px] text-ivory/55 block">Zona</span>
+                                    <span id="pass-seat-zona" class="font-serif text-lg font-bold text-gold-300">-</span>
+                                </div>
+                                <div class="bg-navy-800/80 rounded-xl py-2.5 px-1 border border-gold-500/20">
+                                    <span class="text-[10px] text-ivory/55 block">Baris</span>
+                                    <span id="pass-seat-baris" class="font-serif text-lg font-bold text-ivory">-</span>
+                                </div>
+                                <div class="bg-navy-800/80 rounded-xl py-2.5 px-1 border border-gold-500/20">
+                                    <span class="text-[10px] text-ivory/55 block">Kursi</span>
+                                    <span id="pass-seat-kursi" class="font-serif text-lg font-bold text-ivory">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons: SIMPAN QR CODE, BAGIKAN QR, LIHAT TEMPAT DUDUK -->
+                <div class="space-y-2.5">
+                    <button onclick="downloadPassImage()" class="w-full btn-gold py-3.5 px-5 rounded-2xl font-bold text-xs tracking-[0.14em] uppercase shadow-gold-btn flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/>
+                        </svg>
+                        <span>Simpan QR Code</span>
+                    </button>
+
+                    <div class="grid grid-cols-2 gap-2.5">
+                        <button onclick="sharePassDetails()" class="bg-navy-800 hover:bg-navy-700 border border-gold-500/40 text-gold-300 py-3.5 px-4 rounded-2xl font-semibold text-xs tracking-[0.1em] uppercase flex items-center justify-center gap-1.5 transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"/>
+                            </svg>
+                            <span>Bagikan QR</span>
+                        </button>
+
+                        <button onclick="openFloorplanModal()" class="bg-navy-800 hover:bg-navy-700 border border-gold-500/40 text-ivory py-3.5 px-4 rounded-2xl font-semibold text-xs tracking-[0.1em] uppercase flex items-center justify-center gap-1.5 transition">
+                            <svg class="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+                            </svg>
+                            <span>Lihat Tempat Duduk</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- VIEW 4: CEK KEMBALI QR ("SUDAH REGISTRASI?")-->
+            <!-- ========================================== -->
+            <section id="view-retrieve" class="view-section hidden space-y-5">
+                <div class="text-center space-y-1.5">
+                    <p class="text-[10px] uppercase tracking-[0.24em] text-gold-400 font-semibold">Akses Tiket Digital</p>
+                    <h2 class="font-serif text-2xl font-bold text-ivory tracking-wide">SUDAH REGISTRASI?</h2>
+                    <p class="text-xs text-ivory/70">Masukkan Nomor WhatsApp atau Registration ID Anda</p>
+                </div>
+
+                <div class="luxury-card rounded-3xl p-5 space-y-4">
+                    <div>
+                        <label class="block text-xs font-medium text-gold-300 mb-2">Nomor WhatsApp / Registration ID</label>
+                        <input type="text" id="retrieve-query" placeholder="Contoh: GBB27-IPA1-001 atau 081234567890" class="w-full luxury-input rounded-xl px-4 py-4 text-sm font-medium">
+                    </div>
+
+                    <button onclick="handleRetrieveQR()" class="w-full btn-gold py-4 rounded-2xl font-bold text-xs tracking-[0.15em] uppercase shadow-gold-btn flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+                        </svg>
+                        <span>Lihat QR Code</span>
+                    </button>
+
+                    <div class="gold-divider"></div>
+
+                    <div class="rounded-2xl bg-navy-950/75 border border-gold-500/20 p-3.5 space-y-1.5">
+                        <p class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold">Sinkronisasi Tiket Real-Time</p>
+                        <p class="text-[11px] text-ivory/70 leading-relaxed">
+                            Masukkan <span class="text-ivory font-medium">Registration ID</span> (contoh: <span class="font-mono text-gold-300">GBB27-IPA1-001</span>) atau <span class="text-ivory font-medium">Nomor WhatsApp</span> yang Anda gunakan saat pendaftaran. Status check-in pintu ballroom diperbarui secara otomatis.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Security & Privacy Note -->
+                <div class="rounded-2xl bg-navy-950/60 border border-gold-500/20 p-4 text-center space-y-1">
+                    <p class="text-xs font-semibold text-gold-300">Privasi Data Tamu Terlindungi</p>
+                    <p class="text-[11px] text-ivory/65 leading-relaxed">
+                        Demi keamanan acara, sistem hanya menampilkan tiket QR milik Anda sesuai nomor WhatsApp atau ID registrasi yang dimasukkan.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- VIEW 5: INFORMASI ACARA, LOKASI & RUNDOWN  -->
+            <!-- ========================================== -->
+            <section id="view-event" class="view-section hidden space-y-5">
+                
+                <!-- Event Information Card -->
+                <div class="luxury-card rounded-3xl p-5 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] uppercase tracking-[0.22em] text-gold-400 font-semibold">Event Information</span>
+                        <span class="px-2.5 py-1 rounded-full bg-gold-500/15 border border-gold-500/35 text-[10px] font-bold text-gold-300">
+                            OPEN GATE 08.00 WIB
+                        </span>
+                    </div>
+
+                    <div>
+                        <h2 class="font-serif text-2xl font-bold text-ivory leading-tight">Graduation Ceremony<br>SMA Bumi Berbakti 2027</h2>
+                        <p class="font-serif italic text-base text-gold-300 mt-1">“The Journey Begins: Milestone of Success”</p>
+                    </div>
+
+                    <div class="gold-divider"></div>
+
+                    <div class="space-y-3 text-xs">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-xl bg-navy-950 border border-gold-500/30 flex items-center justify-center shrink-0 text-gold-400">
+                                📅
+                            </div>
+                            <div>
+                                <p class="text-ivory/50 text-[10px] uppercase tracking-wider">Hari & Tanggal</p>
+                                <p class="text-ivory font-semibold text-sm">Sabtu, 15 Mei 2027</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-xl bg-navy-950 border border-gold-500/30 flex items-center justify-center shrink-0 text-gold-400">
+                                🕗
+                            </div>
+                            <div>
+                                <p class="text-ivory/50 text-[10px] uppercase tracking-wider">Waktu Acara</p>
+                                <p class="text-ivory font-semibold text-sm">08.00 – 14.00 WIB <span class="text-gold-300 font-normal">(Open Gate 08.00 WIB)</span></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-xl bg-navy-950 border border-gold-500/30 flex items-center justify-center shrink-0 text-gold-400">
+                                📍
+                            </div>
+                            <div>
+                                <p class="text-ivory/50 text-[10px] uppercase tracking-wider">Lokasi Ballroom</p>
+                                <p class="text-ivory font-semibold text-sm">Tunjungan Grand Ballroom</p>
+                                <p class="text-ivory/70">DoubleTree by Hilton Surabaya, Jl. Tunjungan No.12, Surabaya</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-xl bg-navy-950 border border-gold-500/30 flex items-center justify-center shrink-0 text-gold-400">
+                                👔
+                            </div>
+                            <div>
+                                <p class="text-ivory/50 text-[10px] uppercase tracking-wider">Dresscode Tamu</p>
+                                <p class="text-ivory/85">Formal / Batik Nasional / Kebaya Modern (Nuansa Navy, Gold, atau Ivory)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2.5 pt-1">
+                        <a href="https://maps.google.com/?q=DoubleTree+by+Hilton+Surabaya" target="_blank" rel="noopener noreferrer" class="btn-gold py-3.5 px-4 rounded-2xl font-bold text-xs tracking-[0.1em] uppercase text-center shadow-gold-btn flex items-center justify-center gap-1.5">
+                            <span>Buka Lokasi</span>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+                            </svg>
+                        </a>
+                        <button onclick="openFloorplanModal()" class="bg-navy-800 hover:bg-navy-700 border border-gold-500/45 text-gold-300 py-3.5 px-4 rounded-2xl font-semibold text-xs tracking-[0.1em] uppercase transition">
+                            Denah Kursi
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Official Rundown Timeline -->
+                <div class="luxury-card rounded-3xl p-5 space-y-4">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-[0.22em] text-gold-400 font-semibold">Susunan Acara</p>
+                        <h3 class="font-serif text-2xl font-bold text-ivory">Official Rundown</h3>
+                    </div>
+                    <div class="gold-divider"></div>
+
+                    <div id="rundown-timeline" class="relative pl-5 border-l border-gold-500/35 space-y-4">
+                        <!-- Populated via JS for crisp consistency -->
+                    </div>
+                </div>
+
+                <!-- Discreet Gate Check-in Scanner Simulator Link for Testing -->
+                <div class="text-center pt-1">
+                    <button onclick="openCheckinSimulator()" class="text-[11px] text-ivory/40 hover:text-gold-300 underline transition">
+                        Simulasi Gate Check-In Panitia (Test QR Scan)
+                    </button>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- STICKY MOBILE BOTTOM NAVIGATION BAR -->
+        <nav class="sticky bottom-0 z-30 bg-navy-950/95 backdrop-blur-lg border-t border-gold-500/25 px-2 py-2 grid grid-cols-4 gap-1">
+            <button onclick="navigateTo('home')" data-nav="home" class="nav-btn flex flex-col items-center justify-center py-1.5 rounded-xl text-gold-400 transition">
+                <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/>
+                </svg>
+                <span class="text-[10px] font-semibold tracking-wide">Undangan</span>
+            </button>
+
+            <button onclick="navigateTo('register')" data-nav="register" class="nav-btn flex flex-col items-center justify-center py-1.5 rounded-xl text-ivory/60 hover:text-gold-300 transition">
+                <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"/>
+                </svg>
+                <span class="text-[10px] font-semibold tracking-wide">Registrasi</span>
+            </button>
+
+            <button onclick="navigateTo('retrieve')" data-nav="retrieve" class="nav-btn flex flex-col items-center justify-center py-1.5 rounded-xl text-ivory/60 hover:text-gold-300 transition">
+                <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5zM13.5 14.625h2.25v2.25H13.5v-2.25zM18 18h2.25v2.25H18V18z"/>
+                </svg>
+                <span class="text-[10px] font-semibold tracking-wide">Cek QR</span>
+            </button>
+
+            <button onclick="navigateTo('event')" data-nav="event" class="nav-btn flex flex-col items-center justify-center py-1.5 rounded-xl text-ivory/60 hover:text-gold-300 transition">
+                <svg class="w-5 h-5 mb-0.5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/>
+                </svg>
+                <span class="text-[10px] font-semibold tracking-wide">Info Acara</span>
+            </button>
+        </nav>
+
+        <!-- ========================================== -->
+        <!-- MODAL: BALLROOM SEATING FLOORPLAN          -->
+        <!-- ========================================== -->
+        <div id="floorplan-modal" class="hidden fixed inset-0 z-50 bg-navy-950/90 backdrop-blur-md flex items-center justify-center p-4">
+            <div class="w-full max-w-[390px] luxury-card rounded-3xl p-5 space-y-4 shadow-luxury border border-gold-500/40 max-h-[88vh] overflow-y-auto">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold">Tunjungan Grand Ballroom</p>
+                        <h3 class="font-serif text-xl font-bold text-ivory">Denah Tempat Duduk</h3>
+                    </div>
+                    <button onclick="closeFloorplanModal()" class="w-8 h-8 rounded-full bg-navy-800 border border-gold-500/30 flex items-center justify-center text-ivory/80 hover:text-gold-300">
+                        ✕
+                    </button>
+                </div>
+
+                <!-- Personalized Highlight Banner if user has an active pass -->
+                <div id="modal-seat-highlight" class="hidden rounded-xl bg-gold-500/15 border border-gold-500/40 p-3 text-xs">
+                    <span class="text-gold-300 font-semibold">Posisi Kursi Anda:</span>
+                    <span id="modal-seat-text" class="text-ivory font-bold ml-1">-</span>
+                </div>
+
+                <!-- Interactive Visual SVG Floorplan -->
+                <div class="bg-navy-950 rounded-2xl p-3 border border-gold-500/25">
+                    <svg viewBox="0 0 320 360" class="w-full h-auto">
+                        <!-- Main Stage -->
+                        <rect x="45" y="10" width="230" height="36" rx="8" fill="#162C4E" stroke="#D4AF37" stroke-width="1.5"/>
+                        <text x="160" y="32" text-anchor="middle" fill="#E5C76B" font-size="11" font-weight="bold" letter-spacing="2">MAIN STAGE & PODIUM</text>
+
+                        <!-- Red Carpet Processional Aisle -->
+                        <rect x="148" y="52" width="24" height="265" rx="4" fill="rgba(212, 175, 55, 0.14)" stroke="rgba(212, 175, 55, 0.35)" stroke-dasharray="3 3"/>
+                        <text x="160" y="185" text-anchor="middle" fill="#D4AF37" font-size="8" transform="rotate(-90 160 185)" letter-spacing="2">RED CARPET PROCESSION</text>
+
+                        <!-- ZONA VIP (Guru & Pengurus Sekolah) -->
+                        <rect id="zone-box-VIP" x="20" y="58" width="120" height="44" rx="8" fill="#0F203A" stroke="#D4AF37" stroke-width="1.2"/>
+                        <text x="80" y="77" text-anchor="middle" fill="#FAF7F0" font-size="10" font-weight="bold">ZONA VIP</text>
+                        <text x="80" y="91" text-anchor="middle" fill="#E5C76B" font-size="8">Guru & Pengurus</text>
+
+                        <rect id="zone-box-VIP2" x="180" y="58" width="120" height="44" rx="8" fill="#0F203A" stroke="#D4AF37" stroke-width="1.2"/>
+                        <text x="240" y="77" text-anchor="middle" fill="#FAF7F0" font-size="10" font-weight="bold">ZONA VIP</text>
+                        <text x="240" y="91" text-anchor="middle" fill="#E5C76B" font-size="8">Wali Kelas & Tamu Kehormatan</text>
+
+                        <!-- ZONA A & B (Wisudawan - Barisan Depan untuk Mobilisasi Prosesi) -->
+                        <rect id="zone-box-A" x="20" y="114" width="120" height="84" rx="8" fill="#162C4E" stroke="#E5C76B" stroke-width="1.3"/>
+                        <text x="80" y="148" text-anchor="middle" fill="#FAF7F0" font-size="11" font-weight="bold">ZONA A</text>
+                        <text x="80" y="163" text-anchor="middle" fill="#E5C76B" font-size="9">Wisudawan XII IPA</text>
+                        <text x="80" y="177" text-anchor="middle" fill="#FAF7F0" opacity="0.6" font-size="8">(120 Kursi • Baris 01–06)</text>
+
+                        <rect id="zone-box-B" x="180" y="114" width="120" height="84" rx="8" fill="#162C4E" stroke="#E5C76B" stroke-width="1.3"/>
+                        <text x="240" y="148" text-anchor="middle" fill="#FAF7F0" font-size="11" font-weight="bold">ZONA B</text>
+                        <text x="240" y="163" text-anchor="middle" fill="#E5C76B" font-size="9">Wisudawan XII IPS</text>
+                        <text x="240" y="177" text-anchor="middle" fill="#FAF7F0" opacity="0.6" font-size="8">(99 Kursi • Baris 01–05)</text>
+
+                        <!-- ZONA C & D (Wali Murid - Terpisah dari Barisan Lulusan) -->
+                        <rect id="zone-box-C" x="20" y="210" width="120" height="104" rx="8" fill="#0F203A" stroke="rgba(212,175,55,0.45)" stroke-width="1.2"/>
+                        <text x="80" y="254" text-anchor="middle" fill="#FAF7F0" font-size="11" font-weight="bold">ZONA C</text>
+                        <text x="80" y="269" text-anchor="middle" fill="#E5C76B" font-size="9">Wali Murid IPA</text>
+                        <text x="80" y="283" text-anchor="middle" fill="#FAF7F0" opacity="0.6" font-size="8">(Baris 01–08)</text>
+
+                        <rect id="zone-box-D" x="180" y="210" width="120" height="104" rx="8" fill="#0F203A" stroke="rgba(212,175,55,0.45)" stroke-width="1.2"/>
+                        <text x="240" y="254" text-anchor="middle" fill="#FAF7F0" font-size="11" font-weight="bold">ZONA D</text>
+                        <text x="240" y="269" text-anchor="middle" fill="#E5C76B" font-size="9">Wali Murid IPS</text>
+                        <text x="240" y="283" text-anchor="middle" fill="#FAF7F0" opacity="0.6" font-size="8">(Baris 01–07)</text>
+
+                        <!-- Main Entrance & QR Check-in Gate -->
+                        <rect x="75" y="324" width="170" height="28" rx="6" fill="#D4AF37"/>
+                        <text x="160" y="342" text-anchor="middle" fill="#0A1628" font-size="10" font-weight="bold" letter-spacing="1">ENTRANCE & QR CHECK-IN</text>
+                    </svg>
+                </div>
+
+                <p class="text-[11px] text-ivory/70 leading-relaxed">
+                    <span class="text-gold-300 font-semibold">Tata Ruang Prosesi:</span> Barisan wisudawan (Zona A & B) ditempatkan terpisah di bagian depan dari barisan wali murid (Zona C & D) untuk kelancaran mobilisasi pemanggilan ke atas panggung.
+                </p>
+
+                <button onclick="closeFloorplanModal()" class="w-full btn-gold py-3 rounded-xl font-bold text-xs uppercase tracking-wider">
+                    Tutup Denah
+                </button>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- MODAL: GATE CHECK-IN SIMULATOR (VERIFY QR) -->
+        <!-- ========================================== -->
+        <div id="checkin-modal" class="hidden fixed inset-0 z-50 bg-navy-950/90 backdrop-blur-md flex items-center justify-center p-4">
+            <div class="w-full max-w-[390px] luxury-card rounded-3xl p-5 space-y-4 border border-gold-500/40">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold">Terhubung Sistem Panitia</p>
+                        <h3 class="font-serif text-xl font-bold text-ivory">Verifikasi Gate Check-In</h3>
+                    </div>
+                    <button onclick="closeCheckinSimulator()" class="w-8 h-8 rounded-full bg-navy-800 border border-gold-500/30 flex items-center justify-center text-ivory/80">✕</button>
+                </div>
+                <p class="text-xs text-ivory/70">Masukkan Registration ID hasil scan QR untuk mencatat kehadiran pada tabel <code class="text-gold-300">CHECKINS</code>:</p>
+                <input type="text" id="sim-checkin-id" placeholder="Contoh: GBB27-IPA1-001" class="w-full luxury-input rounded-xl px-4 py-3 text-sm uppercase">
+                <button onclick="executeSimulatedCheckin()" class="w-full btn-gold py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider">
+                    Validasi Masuk Ballroom
+                </button>
+                <div id="sim-checkin-result" class="hidden rounded-xl p-3 text-xs"></div>
+            </div>
+        </div>
+
+        <!-- TOAST NOTIFICATION -->
+        <div id="toast-container" class="fixed top-16 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-[370px] pointer-events-none transition-all duration-300 opacity-0 -translate-y-3">
+            <div id="toast-box" class="rounded-2xl bg-navy-900 border border-gold-500/60 px-4 py-3 shadow-luxury flex items-center gap-3">
+                <span id="toast-icon" class="text-base">✨</span>
+                <p id="toast-message" class="text-xs font-medium text-ivory leading-snug"></p>
+            </div>
+        </div>
+
+        <!-- LOADING OVERLAY -->
+        <div id="loading-overlay" class="hidden fixed inset-0 z-50 bg-navy-950/80 backdrop-blur-sm flex flex-col items-center justify-center gap-3">
+            <div class="w-11 h-11 rounded-full border-2 border-gold-500/25 border-t-gold-400 animate-spin"></div>
+            <p id="loading-text" class="text-xs tracking-[0.18em] uppercase text-gold-300 font-semibold">Menyinkronkan Cloud...</p>
+        </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- FIREBASE CLOUD DATABASE & REAL-TIME SYNC   -->
+    <!-- ========================================== -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import {
+            getFirestore,
+            doc,
+            getDoc,
+            setDoc,
+            collection,
+            query,
+            where,
+            getDocs,
+            onSnapshot,
+            runTransaction
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Environment Configuration
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'gbb-2027-graduation';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+
+        let app = null;
+        let db = null;
+        let auth = null;
+        let currentUser = null;
+
+        // Public Shared Data Collections (Strict Rule 1 Path: /artifacts/{appId}/public/data/{collectionName})
+        const getPublicCol = (colName) => collection(db, 'artifacts', appId, 'public', 'data', colName);
+        const getPublicDoc = (colName, docId) => doc(db, 'artifacts', appId, 'public', 'data', colName, docId);
+
+        // Official Event Quotas
+        const QUOTA_CONFIG = {
+            IPA_MAX: 120,
+            IPS_MAX: 99,
+            TOTAL_STUDENTS_MAX: 219
+        };
+
+        // Live Quota Counts (Synced via onSnapshot without exposing student PII)
+        let liveCounts = {
+            ipa: 0,
+            ips: 0,
+            totalStudents: 0,
+            totalGuardians: 0
+        };
+
+        // Active Pass & Real-Time Check-in Listener State
+        let currentActivePass = null;
+        let verifiedStudentCache = null;
+        let activeCheckinUnsubscribe = null;
+
+        // Rundown Data
+        const RUNDOWN_ITEMS = [
+            { time: '06.00 – 07.45', title: 'Persiapan Panitia', desc: 'Briefing seluruh koordinator & pengecekan teknis ballroom' },
+            { time: '07.45 – 08.00', title: 'Final Check', desc: 'Kesiapan gate QR scanner, tata suara & barisan prosesi' },
+            { time: '08.00 – 09.00', title: 'Open Gate', desc: 'Registrasi ulang QR Code & tamu memasuki ballroom', highlight: true },
+            { time: '09.00 – 09.10', title: 'Pra-Acara', desc: 'Penayangan kilas balik angkatan & persiapan kirab' },
+            { time: '09.10 – 09.25', title: 'Pembukaan', desc: 'Prosesi masuk wisudawan, menyanyikan Indonesia Raya & Mars Sekolah' },
+            { time: '09.25 – 09.50', title: 'Sambutan', desc: 'Sambutan Kepala SMA Bumi Berbakti & Ketua Yayasan' },
+            { time: '09.50 – 11.20', title: 'Prosesi Inti Wisuda', desc: 'Pengalungan gordon & penyerahan ijazah kelulusan 219 wisudawan', highlight: true },
+            { time: '11.20 – 11.40', title: 'Ikrar & Apresiasi Lulusan', desc: 'Pembacaan ikrar alumni & penganugerahan lulusan terbaik' },
+            { time: '11.40 – 12.10', title: 'Pidato & Persembahan', desc: 'Valedictorian speech & persembahan paduan suara angkatan 2027' },
+            { time: '12.10 – 13.10', title: 'Gala Lunch & Ramah Tamah', desc: 'Jamuan makan siang bersama & hiburan akustik' },
+            { time: '13.10 – 13.50', title: 'Sesi Foto Bersama', desc: 'Dokumentasi resmi per kelas bersama wali kelas & pimpinan' },
+            { time: '13.50 – 14.00', title: 'Closing', desc: 'Doa penutup & berakhirnya seluruh rangkaian acara' }
+        ];
+
+        // Update Cloud Sync Status Pill
+        function setSyncBadge(status, label) {
+            const dot = document.getElementById('cloud-sync-dot');
+            const text = document.getElementById('cloud-sync-text');
+            if (!dot || !text) return;
+            text.textContent = label;
+            dot.className = 'w-1.5 h-1.5 rounded-full ' + (
+                status === 'online' ? 'bg-emerald-400 animate-pulse' :
+                status === 'error' ? 'bg-rose-400' : 'bg-amber-400 animate-pulse'
+            );
+        }
+
+        // Authenticate & Initialize Real-Time Cloud Sync
+        async function initCloudSync() {
+            if (!firebaseConfig) {
+                setSyncBadge('error', 'CONFIG MISSING');
+                return;
+            }
+
+            try {
+                app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+
+                // Rule 3: Always authenticate BEFORE any Firestore operation
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+
+                onAuthStateChanged(auth, (user) => {
+                    currentUser = user;
+                    if (user) {
+                        setSyncBadge('online', 'CLOUD SYNC LIVE');
+                        startRealtimeQuotaListeners();
+                    }
+                });
+            } catch (err) {
+                console.error('Cloud Auth Error:', err);
+                setSyncBadge('error', 'SYNC RETRYING');
+            }
+        }
+
+        // Real-Time Quota Tracking via onSnapshot (Rule 2: Simple collection query, aggregate in memory)
+        function startRealtimeQuotaListeners() {
+            if (!currentUser || !db) return;
+
+            onSnapshot(getPublicCol('students'), (snapshot) => {
+                let ipa = 0;
+                let ips = 0;
+                snapshot.forEach((docSnap) => {
+                    const data = docSnap.data();
+                    if (data.jurusan === 'XII IPA') ipa++;
+                    else if (data.jurusan === 'XII IPS') ips++;
+                });
+                liveCounts.ipa = ipa;
+                liveCounts.ips = ips;
+                liveCounts.totalStudents = snapshot.size;
+                refreshQuotaBadges();
+            }, (error) => {
+                console.error('Students listener error:', error);
+            });
+
+            onSnapshot(getPublicCol('guardians'), (snapshot) => {
+                liveCounts.totalGuardians = snapshot.size;
+                refreshQuotaBadges();
+            }, (error) => {
+                console.error('Guardians listener error:', error);
+            });
+        }
+
+        function refreshQuotaBadges() {
+            const stuBadge = document.getElementById('quota-student-badge');
+            const walBadge = document.getElementById('quota-guardian-badge');
+            if (stuBadge) {
+                stuBadge.textContent = `Tersinkron: ${liveCounts.totalStudents} / ${QUOTA_CONFIG.TOTAL_STUDENTS_MAX} (IPA ${liveCounts.ipa}/120 • IPS ${liveCounts.ips}/99)`;
+            }
+            if (walBadge) {
+                walBadge.textContent = `Tersinkron: ${liveCounts.totalGuardians} / ${QUOTA_CONFIG.TOTAL_STUDENTS_MAX} Wali Murid`;
+            }
+        }
+
+        // Helpers
+        function normalizePhone(phone) {
+            let clean = String(phone).replace(/\D/g, '');
+            if (clean.startsWith('62')) clean = '0' + clean.slice(2);
+            return clean;
+        }
+
+        function padNumber(num, size = 3) {
+            return String(num).padStart(size, '0');
+        }
+
+        // Navigation Controller
+        window.navigateTo = function(viewName) {
+            const views = ['home', 'register', 'pass', 'retrieve', 'event'];
+            views.forEach(v => {
+                const el = document.getElementById(`view-${v}`);
+                if (el) el.classList.add('hidden');
+            });
+
+            const target = document.getElementById(`view-${viewName}`);
+            if (target) target.classList.remove('hidden');
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                const isTarget = btn.getAttribute('data-nav') === viewName || (viewName === 'pass' && btn.getAttribute('data-nav') === 'retrieve');
+                btn.classList.toggle('text-gold-400', isTarget);
+                btn.classList.toggle('bg-gold-500/10', isTarget);
+                btn.classList.toggle('text-ivory/60', !isTarget);
+            });
+
+            if (viewName === 'register') refreshQuotaBadges();
+            document.getElementById('main-content').scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        // Toast & Loading Helpers
+        let toastTimeout;
+        function showToast(message, icon = '✨') {
+            const container = document.getElementById('toast-container');
+            document.getElementById('toast-message').textContent = message;
+            document.getElementById('toast-icon').textContent = icon;
+            container.classList.remove('opacity-0', '-translate-y-3', 'pointer-events-none');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                container.classList.add('opacity-0', '-translate-y-3', 'pointer-events-none');
+            }, 3600);
+        }
+
+        function setLoading(isLoading, text = 'Menyinkronkan Cloud...') {
+            const overlay = document.getElementById('loading-overlay');
+            document.getElementById('loading-text').textContent = text;
+            overlay.classList.toggle('hidden', !isLoading);
+        }
+
+        // Role Selection Logic
+        window.selectRole = function(role) {
+            document.getElementById('role-selection-step').classList.add('hidden');
+            ['student', 'guardian', 'teacher'].forEach(r => {
+                document.getElementById(`form-${r}`).classList.add('hidden');
+            });
+            document.getElementById(`form-${role}`).classList.remove('hidden');
+            document.getElementById('main-content').scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        window.resetRoleSelection = function() {
+            ['student', 'guardian', 'teacher'].forEach(r => {
+                document.getElementById(`form-${r}`).classList.add('hidden');
+            });
+            document.getElementById('role-selection-step').classList.remove('hidden');
+        };
+
+        window.updateClassOptions = function() {
+            const jurusan = document.getElementById('stu-jurusan').value;
+            const kelasSelect = document.getElementById('stu-kelas');
+            kelasSelect.innerHTML = '';
+
+            if (jurusan === 'XII IPA') {
+                ['XII IPA 1', 'XII IPA 2', 'XII IPA 3'].forEach(k => {
+                    kelasSelect.innerHTML += `<option value="${k}">${k}</option>`;
+                });
+            } else if (jurusan === 'XII IPS') {
+                ['XII IPS 1', 'XII IPS 2', 'XII IPS 3'].forEach(k => {
+                    kelasSelect.innerHTML += `<option value="${k}">${k}</option>`;
+                });
+            } else {
+                kelasSelect.innerHTML = '<option value="">Pilih Jurusan Dulu</option>';
+            }
+        };
+
+        // Seating Assignment Engine (Separates Graduates Zona A/B from Guardians Zona C/D & VIP)
+        function assignSeating(category, subInfo, indexNumber) {
+            if (category === 'WISUDAWAN') {
+                const isIPA = subInfo.includes('IPA');
+                const zona = isIPA ? 'Zona A' : 'Zona B';
+                const rowNum = Math.ceil(indexNumber / 20);
+                const seatNum = ((indexNumber - 1) % 20) + 1;
+                return { zona, baris: String(rowNum).padStart(2, '0'), kursi: String(seatNum).padStart(2, '0') };
+            } else if (category === 'WALI MURID') {
+                const isIPA = subInfo.includes('IPA');
+                const zona = isIPA ? 'Zona C' : 'Zona D';
+                const rowNum = Math.ceil(indexNumber / 16);
+                const seatNum = ((indexNumber - 1) % 16) + 1;
+                return { zona, baris: String(rowNum).padStart(2, '0'), kursi: String(seatNum).padStart(2, '0') };
+            } else {
+                const rowNum = Math.ceil(indexNumber / 12);
+                const seatNum = ((indexNumber - 1) % 12) + 1;
+                return { zona: 'Zona VIP', baris: String(rowNum).padStart(2, '0'), kursi: String(seatNum).padStart(2, '0') };
+            }
+        }
+
+        // ==========================================
+        // 1. CLOUD TRANSACTION: SUBMIT WISUDAWAN
+        // ==========================================
+        window.handleStudentSubmit = async function(e) {
+            e.preventDefault();
+            if (!currentUser || !db) {
+                showToast('Menghubungkan ke server cloud, coba sesaat lagi...', '⏳');
+                return;
+            }
+
+            const nama = document.getElementById('stu-nama').value.trim();
+            const nisn = document.getElementById('stu-nisn').value.trim();
+            const jurusan = document.getElementById('stu-jurusan').value;
+            const kelas = document.getElementById('stu-kelas').value;
+            const nomor_peserta = document.getElementById('stu-nomor').value.trim().toUpperCase();
+            const whatsapp = normalizePhone(document.getElementById('stu-wa').value);
+            const email = document.getElementById('stu-email').value.trim();
+            const konfirmasi_kehadiran = document.querySelector('input[name="stu-hadir"]:checked').value;
+
+            if (whatsapp.length < 9) {
+                showToast('Nomor WhatsApp tidak valid.', '⚠️');
+                return;
+            }
+
+            setLoading(true, 'Menyimpan ke Cloud Database...');
+            try {
+                // Pre-check duplicates across cloud collection (single-field queries, Rule 2 compliant)
+                const [nisnSnap, waSnap, nomorSnap] = await Promise.all([
+                    getDocs(query(getPublicCol('students'), where('nisn', '==', nisn))),
+                    getDocs(query(getPublicCol('students'), where('whatsapp', '==', whatsapp))),
+                    getDocs(query(getPublicCol('students'), where('nomor_peserta', '==', nomor_peserta)))
+                ]);
+
+                if (!nisnSnap.empty || !waSnap.empty || !nomorSnap.empty) {
+                    setLoading(false);
+                    showToast('NISN, Nomor Peserta, atau WhatsApp sudah terdaftar di Cloud. Gunakan menu Cek QR.', '⚠️');
+                    return;
+                }
+
+                // Atomic Counter & Quota Enforcement via Firestore Transaction
+                const counterRef = getPublicDoc('counters', 'event_counters');
+                const classKey = kelas.replace('XII ', '').replace(' ', ''); // IPA1, IPA2, IPS1, etc.
+
+                const createdRecord = await runTransaction(db, async (transaction) => {
+                    const counterDoc = await transaction.get(counterRef);
+                    const counts = counterDoc.exists() ? counterDoc.data() : {
+                        ipa_total: 0,
+                        ips_total: 0,
+                        IPA1: 0, IPA2: 0, IPA3: 0,
+                        IPS1: 0, IPS2: 0, IPS3: 0,
+                        wali_total: 0,
+                        guru_total: 0
+                    };
+
+                    if (jurusan === 'XII IPA' && (counts.ipa_total || 0) >= QUOTA_CONFIG.IPA_MAX) {
+                        throw new Error('QUOTA_IPA_FULL');
+                    }
+                    if (jurusan === 'XII IPS' && (counts.ips_total || 0) >= QUOTA_CONFIG.IPS_MAX) {
+                        throw new Error('QUOTA_IPS_FULL');
+                    }
+
+                    const nextClassSeq = (counts[classKey] || 0) + 1;
+                    const nextMajorSeq = jurusan === 'XII IPA' ? (counts.ipa_total || 0) + 1 : (counts.ips_total || 0) + 1;
+
+                    const regId = `GBB27-${classKey}-${padNumber(nextClassSeq, 3)}`;
+                    const seating = assignSeating('WISUDAWAN', jurusan, nextMajorSeq);
+                    const qrPayload = JSON.stringify({
+                        event: 'GBB2027',
+                        id: regId,
+                        role: 'WISUDAWAN',
+                        name: nama,
+                        kelas: kelas
+                    });
+
+                    const newStuDocRef = doc(getPublicCol('students'));
+                    const recordData = {
+                        id: newStuDocRef.id,
+                        registration_id: regId,
+                        nama,
+                        nama_lower: nama.toLowerCase(),
+                        nisn,
+                        kelas,
+                        jurusan,
+                        nomor_peserta,
+                        whatsapp,
+                        email,
+                        konfirmasi_kehadiran,
+                        qr_code: qrPayload,
+                        seating,
+                        guardian_linked: false,
+                        created_at: new Date().toISOString()
+                    };
+
+                    const updatedCounts = {
+                        ...counts,
+                        [classKey]: nextClassSeq,
+                        ipa_total: jurusan === 'XII IPA' ? nextMajorSeq : (counts.ipa_total || 0),
+                        ips_total: jurusan === 'XII IPS' ? nextMajorSeq : (counts.ips_total || 0)
+                    };
+
+                    transaction.set(counterRef, updatedCounts);
+                    transaction.set(newStuDocRef, recordData);
+                    return recordData;
+                });
+
+                setLoading(false);
+                e.target.reset();
+                resetRoleSelection();
+
+                renderPassView({
+                    registration_id: createdRecord.registration_id,
+                    nama: createdRecord.nama,
+                    kategori: 'Wisudawan',
+                    sublabel: 'Kelas & No. Peserta',
+                    kelasInfo: `${createdRecord.kelas} • ${createdRecord.nomor_peserta}`,
+                    kehadiran: createdRecord.konfirmasi_kehadiran,
+                    qr_code: createdRecord.qr_code,
+                    seating: createdRecord.seating
+                });
+                showToast('Registrasi Wisudawan Tersinkron ke Cloud!', '🎓');
+            } catch (err) {
+                setLoading(false);
+                if (err.message === 'QUOTA_IPA_FULL') {
+                    showToast('Kuota Wisudawan XII IPA (120 siswa) telah penuh.', '🚫');
+                } else if (err.message === 'QUOTA_IPS_FULL') {
+                    showToast('Kuota Wisudawan XII IPS (99 siswa) telah penuh.', '🚫');
+                } else {
+                    console.error('Student registration error:', err);
+                    showToast('Gagal menyimpan data ke cloud. Periksa koneksi internet Anda.', '❌');
+                }
+            }
+        };
+
+        // ==========================================
+        // 2. CLOUD TARGETED QUERY: VERIFIKASI WALI
+        // ==========================================
+        window.lookupStudentForGuardian = async function() {
+            if (!currentUser || !db) {
+                showToast('Menghubungkan ke server cloud...', '⏳');
+                return;
+            }
+
+            const rawQuery = document.getElementById('wal-student-search').value.trim();
+            if (!rawQuery) {
+                showToast('Masukkan Nama Lengkap, NISN, atau Nomor Peserta wisudawan.', '🔍');
+                return;
+            }
+
+            setLoading(true, 'Mencari Data Wisudawan di Cloud...');
+            try {
+                // Targeted single-field queries so full student database is never exposed publicly
+                const [byNisn, byNomor, byNameLower] = await Promise.all([
+                    getDocs(query(getPublicCol('students'), where('nisn', '==', rawQuery))),
+                    getDocs(query(getPublicCol('students'), where('nomor_peserta', '==', rawQuery.toUpperCase()))),
+                    getDocs(query(getPublicCol('students'), where('nama_lower', '==', rawQuery.toLowerCase())))
+                ]);
+
+                let matchedDoc = null;
+                if (!byNisn.empty) matchedDoc = byNisn.docs[0];
+                else if (!byNomor.empty) matchedDoc = byNomor.docs[0];
+                else if (!byNameLower.empty) matchedDoc = byNameLower.docs[0];
+
+                if (!matchedDoc) {
+                    setLoading(false);
+                    showToast('Data wisudawan tidak ditemukan. Pastikan wisudawan sudah melakukan registrasi.', '⚠️');
+                    return;
+                }
+
+                const studentData = { id: matchedDoc.id, ...matchedDoc.data() };
+
+                // Verify 1-to-1 Guardian link in cloud
+                const existingGuardianSnap = await getDocs(
+                    query(getPublicCol('guardians'), where('student_id', '==', studentData.id))
+                );
+
+                setLoading(false);
+
+                if (!existingGuardianSnap.empty || studentData.guardian_linked) {
+                    const existingWal = !existingGuardianSnap.empty ? existingGuardianSnap.docs[0].data().nama_wali : 'Wali Terdaftar';
+                    showToast(`Wisudawan ${studentData.nama} sudah terhubung dengan Wali (${existingWal}).`, '🚫');
+                    return;
+                }
+
+                verifiedStudentCache = studentData;
+                document.getElementById('wal-selected-student-id').value = studentData.id;
+                document.getElementById('ver-stu-nama').textContent = studentData.nama;
+                document.getElementById('ver-stu-kelas').textContent = studentData.kelas;
+                document.getElementById('ver-stu-nomor').textContent = studentData.nomor_peserta;
+                document.getElementById('verified-student-card').classList.remove('hidden');
+                showToast('Wisudawan Terverifikasi dari Cloud!', '✓');
+            } catch (err) {
+                setLoading(false);
+                console.error('Lookup error:', err);
+                showToast('Terjadi kendala saat mencari data wisudawan.', '❌');
+            }
+        };
+
+        window.clearSelectedStudent = function() {
+            verifiedStudentCache = null;
+            document.getElementById('wal-selected-student-id').value = '';
+            document.getElementById('verified-student-card').classList.add('hidden');
+            document.getElementById('wal-student-search').value = '';
+        };
+
+        window.handleGuardianSubmit = async function(e) {
+            e.preventDefault();
+            if (!currentUser || !db) return;
+
+            const nama_wali = document.getElementById('wal-nama').value.trim();
+            const hubungan = document.getElementById('wal-hubungan').value;
+            const whatsapp = normalizePhone(document.getElementById('wal-wa').value);
+            const studentId = document.getElementById('wal-selected-student-id').value;
+            const konfirmasi_kehadiran = document.querySelector('input[name="wal-hadir"]:checked').value;
+
+            if (!studentId || !verifiedStudentCache) {
+                showToast('Silakan cari dan verifikasi data Wisudawan terlebih dahulu.', '⚠️');
+                return;
+            }
+
+            if (whatsapp.length < 9) {
+                showToast('Nomor WhatsApp wali tidak valid.', '⚠️');
+                return;
+            }
+
+            setLoading(true, 'Menyinkronkan Data Wali Murid...');
+            try {
+                const counterRef = getPublicDoc('counters', 'event_counters');
+                const studentRef = getPublicDoc('students', studentId);
+
+                const createdGuardian = await runTransaction(db, async (transaction) => {
+                    const [counterDoc, studentDoc] = await Promise.all([
+                        transaction.get(counterRef),
+                        transaction.get(studentRef)
+                    ]);
+
+                    if (!studentDoc.exists()) {
+                        throw new Error('STUDENT_NOT_FOUND');
+                    }
+                    const stuData = studentDoc.data();
+                    if (stuData.guardian_linked) {
+                        throw new Error('ALREADY_LINKED');
+                    }
+
+                    const counts = counterDoc.exists() ? counterDoc.data() : { wali_total: 0 };
+                    const nextWaliSeq = (counts.wali_total || 0) + 1;
+                    if (nextWaliSeq > QUOTA_CONFIG.TOTAL_STUDENTS_MAX) {
+                        throw new Error('QUOTA_WALI_FULL');
+                    }
+
+                    const regId = `GBB27-WALI-${padNumber(nextWaliSeq, 3)}`;
+                    const seating = assignSeating('WALI MURID', stuData.jurusan, nextWaliSeq);
+                    const qrPayload = JSON.stringify({
+                        event: 'GBB2027',
+                        id: regId,
+                        role: 'WALI_MURID',
+                        name: nama_wali,
+                        student: stuData.nama
+                    });
+
+                    const newWalRef = doc(getPublicCol('guardians'));
+                    const recordData = {
+                        id: newWalRef.id,
+                        registration_id: regId,
+                        student_id: studentId,
+                        student_reg_id: stuData.registration_id,
+                        student_nama: stuData.nama,
+                        student_kelas: stuData.kelas,
+                        student_nomor_peserta: stuData.nomor_peserta,
+                        nama_wali,
+                        hubungan,
+                        whatsapp,
+                        konfirmasi_kehadiran,
+                        qr_code: qrPayload,
+                        seating,
+                        created_at: new Date().toISOString()
+                    };
+
+                    transaction.set(counterRef, { ...counts, wali_total: nextWaliSeq });
+                    transaction.update(studentRef, { guardian_linked: true, guardian_reg_id: regId });
+                    transaction.set(newWalRef, recordData);
+                    return recordData;
+                });
+
+                setLoading(false);
+                e.target.reset();
+                clearSelectedStudent();
+                resetRoleSelection();
+
+                renderPassView({
+                    registration_id: createdGuardian.registration_id,
+                    nama: createdGuardian.nama_wali,
+                    kategori: `Wali Murid (${createdGuardian.hubungan})`,
+                    sublabel: 'Wali Dari Wisudawan',
+                    kelasInfo: `${createdGuardian.student_nama} (${createdGuardian.student_kelas})`,
+                    kehadiran: createdGuardian.konfirmasi_kehadiran,
+                    qr_code: createdGuardian.qr_code,
+                    seating: createdGuardian.seating
+                });
+                showToast('Registrasi Wali Murid Tersinkron ke Cloud!', '👨‍👩‍👧');
+            } catch (err) {
+                setLoading(false);
+                if (err.message === 'ALREADY_LINKED') {
+                    showToast('Wisudawan ini baru saja dihubungkan dengan wali murid lain.', '🚫');
+                } else if (err.message === 'QUOTA_WALI_FULL') {
+                    showToast('Kuota Wali Murid (219) telah penuh.', '🚫');
+                } else {
+                    console.error('Guardian registration error:', err);
+                    showToast('Gagal menyimpan registrasi wali murid.', '❌');
+                }
+            }
+        };
+
+        // ==========================================
+        // 3. CLOUD TRANSACTION: SUBMIT GURU/PENGURUS
+        // ==========================================
+        window.handleTeacherSubmit = async function(e) {
+            e.preventDefault();
+            if (!currentUser || !db) return;
+
+            const nama = document.getElementById('tch-nama').value.trim();
+            const jabatan = document.getElementById('tch-jabatan').value;
+            const kelas = document.getElementById('tch-kelas').value;
+            const whatsapp = normalizePhone(document.getElementById('tch-wa').value);
+            const email = document.getElementById('tch-email').value.trim();
+            const konfirmasi_kehadiran = document.querySelector('input[name="tch-hadir"]:checked').value;
+
+            if (whatsapp.length < 9) {
+                showToast('Nomor WhatsApp tidak valid.', '⚠️');
+                return;
+            }
+
+            setLoading(true, 'Menyinkronkan Data Civitas...');
+            try {
+                const existingSnap = await getDocs(
+                    query(getPublicCol('teachers'), where('whatsapp', '==', whatsapp))
+                );
+                if (!existingSnap.empty) {
+                    setLoading(false);
+                    showToast('Nomor WhatsApp ini sudah terdaftar di Cloud. Gunakan menu Cek QR.', '⚠️');
+                    return;
+                }
+
+                const counterRef = getPublicDoc('counters', 'event_counters');
+                const createdTeacher = await runTransaction(db, async (transaction) => {
+                    const counterDoc = await transaction.get(counterRef);
+                    const counts = counterDoc.exists() ? counterDoc.data() : { guru_total: 0 };
+                    const nextGuruSeq = (counts.guru_total || 0) + 1;
+
+                    const regId = `GBB27-GURU-${padNumber(nextGuruSeq, 3)}`;
+                    const seating = assignSeating('GURU', kelas, nextGuruSeq);
+                    const qrPayload = JSON.stringify({
+                        event: 'GBB2027',
+                        id: regId,
+                        role: 'GURU_PENGURUS',
+                        name: nama,
+                        jabatan: jabatan
+                    });
+
+                    const newTchRef = doc(getPublicCol('teachers'));
+                    const recordData = {
+                        id: newTchRef.id,
+                        registration_id: regId,
+                        nama,
+                        jabatan,
+                        kelas,
+                        whatsapp,
+                        email,
+                        konfirmasi_kehadiran,
+                        qr_code: qrPayload,
+                        seating,
+                        created_at: new Date().toISOString()
+                    };
+
+                    transaction.set(counterRef, { ...counts, guru_total: nextGuruSeq });
+                    transaction.set(newTchRef, recordData);
+                    return recordData;
+                });
+
+                setLoading(false);
+                e.target.reset();
+                resetRoleSelection();
+
+                renderPassView({
+                    registration_id: createdTeacher.registration_id,
+                    nama: createdTeacher.nama,
+                    kategori: createdTeacher.jabatan,
+                    sublabel: 'Unit / Kelas',
+                    kelasInfo: createdTeacher.kelas,
+                    kehadiran: createdTeacher.konfirmasi_kehadiran,
+                    qr_code: createdTeacher.qr_code,
+                    seating: createdTeacher.seating
+                });
+                showToast('Registrasi Guru / Pengurus Tersinkron!', '👨‍🏫');
+            } catch (err) {
+                setLoading(false);
+                console.error('Teacher registration error:', err);
+                showToast('Gagal menyimpan data guru/pengurus.', '❌');
+            }
+        };
+
+        // ==========================================
+        // 4. CLOUD RETRIEVE QR ("SUDAH REGISTRASI?")
+        // ==========================================
+        window.handleRetrieveQR = async function() {
+            if (!currentUser || !db) {
+                showToast('Menghubungkan ke server cloud...', '⏳');
+                return;
+            }
+
+            const rawInput = document.getElementById('retrieve-query').value.trim();
+            if (!rawInput) {
+                showToast('Masukkan Nomor WhatsApp atau Registration ID.', '⚠️');
+                return;
+            }
+
+            const upperQuery = rawInput.toUpperCase();
+            const phoneQuery = normalizePhone(rawInput);
+
+            setLoading(true, 'Mencari Tiket QR di Cloud...');
+            try {
+                // Targeted single-field queries across students, guardians, teachers
+                const queries = [
+                    getDocs(query(getPublicCol('students'), where('registration_id', '==', upperQuery))),
+                    getDocs(query(getPublicCol('guardians'), where('registration_id', '==', upperQuery))),
+                    getDocs(query(getPublicCol('teachers'), where('registration_id', '==', upperQuery)))
+                ];
+
+                if (phoneQuery.length >= 8) {
+                    queries.push(
+                        getDocs(query(getPublicCol('students'), where('whatsapp', '==', phoneQuery))),
+                        getDocs(query(getPublicCol('guardians'), where('whatsapp', '==', phoneQuery))),
+                        getDocs(query(getPublicCol('teachers'), where('whatsapp', '==', phoneQuery)))
+                    );
+                }
+
+                const results = await Promise.all(queries);
+                setLoading(false);
+
+                // Check Student matches
+                const stuMatch = !results[0].empty ? results[0].docs[0].data() : (results[3] && !results[3].empty ? results[3].docs[0].data() : null);
+                if (stuMatch) {
+                    renderPassView({
+                        registration_id: stuMatch.registration_id,
+                        nama: stuMatch.nama,
+                        kategori: 'Wisudawan',
+                        sublabel: 'Kelas & No. Peserta',
+                        kelasInfo: `${stuMatch.kelas} • ${stuMatch.nomor_peserta}`,
+                        kehadiran: stuMatch.konfirmasi_kehadiran,
+                        qr_code: stuMatch.qr_code,
+                        seating: stuMatch.seating
+                    });
+                    showToast('Tiket Wisudawan Ditemukan!', '✓');
+                    return;
+                }
+
+                // Check Guardian matches
+                const walMatch = !results[1].empty ? results[1].docs[0].data() : (results[4] && !results[4].empty ? results[4].docs[0].data() : null);
+                if (walMatch) {
+                    renderPassView({
+                        registration_id: walMatch.registration_id,
+                        nama: walMatch.nama_wali,
+                        kategori: `Wali Murid (${walMatch.hubungan})`,
+                        sublabel: 'Wali Dari Wisudawan',
+                        kelasInfo: `${walMatch.student_nama} (${walMatch.student_kelas})`,
+                        kehadiran: walMatch.konfirmasi_kehadiran,
+                        qr_code: walMatch.qr_code,
+                        seating: walMatch.seating
+                    });
+                    showToast('Tiket Wali Murid Ditemukan!', '✓');
+                    return;
+                }
+
+                // Check Teacher matches
+                const tchMatch = !results[2].empty ? results[2].docs[0].data() : (results[5] && !results[5].empty ? results[5].docs[0].data() : null);
+                if (tchMatch) {
+                    renderPassView({
+                        registration_id: tchMatch.registration_id,
+                        nama: tchMatch.nama,
+                        kategori: tchMatch.jabatan,
+                        sublabel: 'Unit / Kelas',
+                        kelasInfo: tchMatch.kelas,
+                        kehadiran: tchMatch.konfirmasi_kehadiran,
+                        qr_code: tchMatch.qr_code,
+                        seating: tchMatch.seating
+                    });
+                    showToast('Tiket Civitas Akademika Ditemukan!', '✓');
+                    return;
+                }
+
+                showToast('Data tidak ditemukan di Cloud. Periksa kembali No. WhatsApp atau ID Anda.', '❌');
+            } catch (err) {
+                setLoading(false);
+                console.error('Retrieve QR error:', err);
+                showToast('Terjadi kesalahan saat mengambil data dari cloud.', '❌');
+            }
+        };
+
+        // ==========================================
+        // 5. RENDER PASS & REAL-TIME CHECK-IN SYNC
+        // ==========================================
+        function subscribeToGuestCheckin(regId, defaultStatusText) {
+            if (activeCheckinUnsubscribe) {
+                activeCheckinUnsubscribe();
+                activeCheckinUnsubscribe = null;
+            }
+            if (!currentUser || !db) return;
+
+            const badge = document.getElementById('pass-status-badge');
+            badge.textContent = defaultStatusText.toUpperCase();
+            badge.className = 'px-2.5 py-1 rounded-lg bg-gold-500/20 border border-gold-500/40 text-[10px] font-bold text-gold-300 uppercase tracking-wider';
+
+            const checkinRef = getPublicDoc('checkins', regId);
+            activeCheckinUnsubscribe = onSnapshot(checkinRef, (docSnap) => {
+                if (docSnap.exists() && docSnap.data().status === 'CHECKED_IN') {
+                    badge.textContent = 'SUDAH CHECK-IN ✓';
+                    badge.className = 'px-2.5 py-1 rounded-lg bg-emerald-500/25 border border-emerald-400/60 text-[10px] font-bold text-emerald-300 uppercase tracking-wider';
+                }
+            }, (err) => {
+                console.error('Check-in listener error:', err);
+            });
+        }
+
+        function renderPassView(passData) {
+            currentActivePass = passData;
+
+            document.getElementById('pass-nama').textContent = passData.nama;
+            document.getElementById('pass-kategori').textContent = passData.kategori;
+            document.getElementById('pass-sublabel').textContent = passData.sublabel;
+            document.getElementById('pass-kelas').textContent = passData.kelasInfo;
+            document.getElementById('pass-reg-id').textContent = passData.registration_id;
+
+            document.getElementById('pass-seat-zona').textContent = passData.seating.zona;
+            document.getElementById('pass-seat-baris').textContent = passData.seating.baris;
+            document.getElementById('pass-seat-kursi').textContent = passData.seating.kursi;
+
+            // Subscribe in real-time to gate check-in status
+            subscribeToGuestCheckin(passData.registration_id, passData.kehadiran);
+
+            // Generate Real High-Contrast QR Code via QRCode.js
+            const qrContainer = document.getElementById('qrcode-container');
+            qrContainer.innerHTML = '';
+            new QRCode(qrContainer, {
+                text: passData.registration_id,
+                width: 196,
+                height: 196,
+                colorDark: '#0A1628',
+                colorLight: '#FFFFFF',
+                correctLevel: QRCode.CorrectLevel.H
+            });
+
+            navigateTo('pass');
+        }
+
+        // Download High-Res Luxury Invitation Pass PNG
+        window.downloadPassImage = function() {
+            if (!currentActivePass) return;
+
+            const qrCanvas = document.querySelector('#qrcode-container canvas');
+            if (!qrCanvas) {
+                showToast('QR Code sedang dimuat, coba sesaat lagi.', '⏳');
+                return;
+            }
+
+            const exportCanvas = document.createElement('canvas');
+            exportCanvas.width = 780;
+            exportCanvas.height = 1120;
+            const ctx = exportCanvas.getContext('2d');
+
+            ctx.fillStyle = '#0A1628';
+            ctx.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
+
+            ctx.strokeStyle = '#D4AF37';
+            ctx.lineWidth = 6;
+            ctx.strokeRect(28, 28, exportCanvas.width - 56, exportCanvas.height - 56);
+
+            ctx.strokeStyle = 'rgba(212, 175, 55, 0.45)';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(44, 44, exportCanvas.width - 88, exportCanvas.height - 88);
+
+            ctx.textAlign = 'center';
+            ctx.fillStyle = '#E5C76B';
+            ctx.font = '600 20px sans-serif';
+            ctx.fillText('OFFICIAL BALLROOM ENTRY PASS', 390, 105);
+
+            ctx.fillStyle = '#FAF7F0';
+            ctx.font = 'bold 42px Georgia, serif';
+            ctx.fillText('GRADUATION CEREMONY', 390, 160);
+
+            ctx.fillStyle = '#D4AF37';
+            ctx.font = 'bold 28px Georgia, serif';
+            ctx.fillText('SMA BUMI BERBAKTI 2027', 390, 202);
+
+            ctx.fillStyle = 'rgba(250, 247, 240, 0.75)';
+            ctx.font = '18px sans-serif';
+            ctx.fillText('Sabtu, 15 Mei 2027 • 08.00 WIB • DoubleTree by Hilton Surabaya', 390, 242);
+
+            ctx.fillStyle = '#FFFFFF';
+            ctx.beginPath();
+            ctx.roundRect(185, 285, 410, 445, 28);
+            ctx.fill();
+
+            ctx.drawImage(qrCanvas, 225, 315, 330, 330);
+
+            ctx.fillStyle = '#0A1628';
+            ctx.font = 'bold 30px monospace';
+            ctx.fillText(currentActivePass.registration_id, 390, 695);
+
+            ctx.fillStyle = '#E5C76B';
+            ctx.font = '600 18px sans-serif';
+            ctx.fillText(currentActivePass.kategori.toUpperCase(), 390, 785);
+
+            ctx.fillStyle = '#FAF7F0';
+            ctx.font = 'bold 36px Georgia, serif';
+            ctx.fillText(currentActivePass.nama, 390, 835);
+
+            ctx.fillStyle = 'rgba(250, 247, 240, 0.8)';
+            ctx.font = '22px sans-serif';
+            ctx.fillText(currentActivePass.kelasInfo, 390, 875);
+
+            ctx.fillStyle = 'rgba(212, 175, 55, 0.15)';
+            ctx.strokeStyle = '#D4AF37';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.roundRect(120, 915, 540, 90, 18);
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.fillStyle = '#E5C76B';
+            ctx.font = 'bold 26px Georgia, serif';
+            ctx.fillText(
+                `TEMPAT DUDUK: ${currentActivePass.seating.zona}  |  BARIS ${currentActivePass.seating.baris}  |  KURSI ${currentActivePass.seating.kursi}`,
+                390,
+                970
+            );
+
+            const link = document.createElement('a');
+            link.download = `QR-Pass-${currentActivePass.registration_id}.png`;
+            link.href = exportCanvas.toDataURL('image/png');
+            link.click();
+
+            showToast('Tiket QR Code berhasil disimpan!', '📥');
+        };
+
+        window.sharePassDetails = function() {
+            if (!currentActivePass) return;
+
+            const shareText = 
+`🎓 *E-INVITATION & BALLROOM PASS*
+Graduation Ceremony SMA Bumi Berbakti 2027
+“The Journey Begins: Milestone of Success”
+
+Nama: ${currentActivePass.nama}
+Kategori: ${currentActivePass.kategori}
+Registration ID: *${currentActivePass.registration_id}*
+Tempat Duduk: ${currentActivePass.seating.zona}, Baris ${currentActivePass.seating.baris}, Kursi ${currentActivePass.seating.kursi}
+
+📅 Sabtu, 15 Mei 2027 | 08.00 – 14.00 WIB
+📍 Tunjungan Grand Ballroom, DoubleTree by Hilton Surabaya`;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'QR Pass Graduation SMA Bumi Berbakti 2027',
+                    text: shareText
+                }).catch(() => {});
+            } else {
+                const tempInput = document.createElement('textarea');
+                tempInput.value = shareText;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                showToast('Detail Undangan & Registration ID disalin ke clipboard!', '📋');
+            }
+        };
+
+        // ==========================================
+        // 6. FLOORPLAN MODAL & CLOUD GATE CHECK-IN
+        // ==========================================
+        window.openFloorplanModal = function() {
+            const modal = document.getElementById('floorplan-modal');
+            const highlightBox = document.getElementById('modal-seat-highlight');
+            const highlightText = document.getElementById('modal-seat-text');
+
+            ['A', 'B', 'C', 'D', 'VIP', 'VIP2'].forEach(z => {
+                const rect = document.getElementById(`zone-box-${z}`);
+                if (rect) {
+                    rect.setAttribute('stroke-width', '1.2');
+                    rect.setAttribute('fill', z === 'A' || z === 'B' ? '#162C4E' : '#0F203A');
+                }
+            });
+
+            if (currentActivePass) {
+                highlightBox.classList.remove('hidden');
+                highlightText.textContent = `${currentActivePass.seating.zona} • Baris ${currentActivePass.seating.baris} • Kursi ${currentActivePass.seating.kursi}`;
+
+                const zName = currentActivePass.seating.zona;
+                let targetId = '';
+                if (zName === 'Zona A') targetId = 'zone-box-A';
+                else if (zName === 'Zona B') targetId = 'zone-box-B';
+                else if (zName === 'Zona C') targetId = 'zone-box-C';
+                else if (zName === 'Zona D') targetId = 'zone-box-D';
+                else if (zName === 'Zona VIP') targetId = 'zone-box-VIP';
+
+                const activeRect = document.getElementById(targetId);
+                if (activeRect) {
+                    activeRect.setAttribute('fill', 'rgba(212, 175, 55, 0.32)');
+                    activeRect.setAttribute('stroke', '#F3E0A8');
+                    activeRect.setAttribute('stroke-width', '2.5');
+                }
+            } else {
+                highlightBox.classList.add('hidden');
+            }
+
+            modal.classList.remove('hidden');
+        };
+
+        window.closeFloorplanModal = function() {
+            document.getElementById('floorplan-modal').classList.add('hidden');
+        };
+
+        window.openCheckinSimulator = function() {
+            if (currentActivePass) {
+                document.getElementById('sim-checkin-id').value = currentActivePass.registration_id;
+            }
+            document.getElementById('sim-checkin-result').classList.add('hidden');
+            document.getElementById('checkin-modal').classList.remove('hidden');
+        };
+
+        window.closeCheckinSimulator = function() {
+            document.getElementById('checkin-modal').classList.add('hidden');
+        };
+
+        window.executeSimulatedCheckin = async function() {
+            if (!currentUser || !db) return;
+            const regId = document.getElementById('sim-checkin-id').value.trim().toUpperCase();
+            const resBox = document.getElementById('sim-checkin-result');
+            if (!regId) return;
+
+            setLoading(true, 'Memvalidasi QR di Cloud...');
+            try {
+                const [stuSnap, walSnap, tchSnap, existingCheckinSnap] = await Promise.all([
+                    getDocs(query(getPublicCol('students'), where('registration_id', '==', regId))),
+                    getDocs(query(getPublicCol('guardians'), where('registration_id', '==', regId))),
+                    getDocs(query(getPublicCol('teachers'), where('registration_id', '==', regId))),
+                    getDoc(getPublicDoc('checkins', regId))
+                ]);
+
+                let guest = null;
+                let kategori = '';
+                if (!stuSnap.empty) { guest = stuSnap.docs[0].data(); kategori = 'Wisudawan'; }
+                else if (!walSnap.empty) { guest = walSnap.docs[0].data(); kategori = 'Wali Murid'; }
+                else if (!tchSnap.empty) { guest = tchSnap.docs[0].data(); kategori = guest.jabatan; }
+
+                resBox.classList.remove('hidden');
+
+                if (!guest) {
+                    setLoading(false);
+                    resBox.className = 'rounded-xl p-3 text-xs bg-rose-500/20 border border-rose-500/40 text-rose-200';
+                    resBox.textContent = `❌ QR Tidak Valid: Registration ID ${regId} tidak terdaftar di Cloud.`;
+                    return;
+                }
+
+                if (existingCheckinSnap.exists()) {
+                    setLoading(false);
+                    resBox.className = 'rounded-xl p-3 text-xs bg-amber-500/20 border border-amber-500/40 text-amber-200';
+                    resBox.textContent = `⚠️ Sudah Check-In pada ${existingCheckinSnap.data().waktu_checkin}.`;
+                    return;
+                }
+
+                const nowStr = new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' }) + ' WIB';
+                const guestName = guest.nama || guest.nama_wali;
+
+                await setDoc(getPublicDoc('checkins', regId), {
+                    id: regId,
+                    registration_id: regId,
+                    nama: guestName,
+                    kategori: kategori,
+                    waktu_checkin: nowStr,
+                    status: 'CHECKED_IN'
+                });
+
+                setLoading(false);
+                resBox.className = 'rounded-xl p-3 text-xs bg-emerald-500/20 border border-emerald-500/40 text-emerald-200';
+                resBox.innerHTML = `✅ <strong>VALID CHECK-IN CLOUD!</strong><br>Tamu: ${guestName}<br>Kursi: ${guest.seating.zona} • Baris ${guest.seating.baris} • Kursi ${guest.seating.kursi}`;
+            } catch (err) {
+                setLoading(false);
+                console.error('Check-in error:', err);
+                showToast('Gagal memvalidasi check-in di cloud.', '❌');
+            }
+        };
+
+        // ==========================================
+        // 7. LIVE COUNTDOWN & RUNDOWN RENDERING
+        // ==========================================
+        function startCountdown() {
+            const targetDate = new Date('2027-05-15T08:00:00+07:00').getTime();
+
+            function update() {
+                const now = Date.now();
+                const diff = Math.max(0, targetDate - now);
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const mins = Math.floor((diff / (1000 * 60)) % 60);
+                const secs = Math.floor((diff / 1000) % 60);
+
+                document.getElementById('cd-days').textContent = String(days).padStart(3, '0');
+                document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+                document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+            }
+
+            update();
+            setInterval(update, 1000);
+        }
+
+        function renderRundown() {
+            const container = document.getElementById('rundown-timeline');
+            container.innerHTML = RUNDOWN_ITEMS.map(item => `
+                <div class="relative">
+                    <span class="absolute -left-[25px] top-1 w-2.5 h-2.5 rounded-full ${item.highlight ? 'bg-gold-400 ring-4 ring-gold-500/20' : 'bg-navy-700 border border-gold-500/60'}"></span>
+                    <div class="${item.highlight ? 'bg-gold-500/10 border border-gold-500/35 rounded-xl p-2.5 -mt-1' : ''}">
+                        <span class="text-[11px] font-mono font-semibold text-gold-300 tracking-wide">${item.time} WIB</span>
+                        <h4 class="font-serif text-base font-bold text-ivory leading-snug">${item.title}</h4>
+                        <p class="text-[11px] text-ivory/65 mt-0.5 leading-relaxed">${item.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Boot Application on Window Load
+        window.onload = function() {
+            initCloudSync();
+            startCountdown();
+            renderRundown();
+        };
+    </script>
+</body>
+</html>
